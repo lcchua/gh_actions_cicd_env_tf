@@ -23,8 +23,13 @@ variable "working_dir" {
 }
 */
 
-variable "region" {
+variable "aws_region" {
   description = "Name of aws region"
   type        = string
-  # default     = 
+  # default     = "us-east-1"
+}
+
+variable "env_type" {
+  description = "Type of environment"
+  type        = string
 }

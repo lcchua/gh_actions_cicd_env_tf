@@ -4,6 +4,6 @@ resource "aws_sns_topic" "user_updates" {
   name = "lcchua-04092024-sns-topic"
 
   tags = {
-    Name = "Env=${var.environment}"
+    Name = "Env=${var.env_type}"
   }
 }
