@@ -33,3 +33,8 @@ variable "env_type" {
   description = "Type of environment"
   type        = string
 }
+
+variable "topic_name" {
+  description	= "The name of the SNS topic"
+  type		    = string
+}
