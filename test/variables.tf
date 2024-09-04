@@ -26,5 +26,5 @@ variable "working_dir" {
 variable "region" {
   description = "Name of aws region"
   type        = string
-  # default     = 
+  default     = "us-east-1"
 }
