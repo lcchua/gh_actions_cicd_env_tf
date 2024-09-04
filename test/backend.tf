@@ -14,6 +14,6 @@ terraform {
   backend "s3" {
     bucket = "sctp-ce7-tfstate"
     key    = "terraform-ex-gh-action-lcchua.tfstate"
-    region = "us-east-1"
+    region = "us-east-2"
   }
 }
