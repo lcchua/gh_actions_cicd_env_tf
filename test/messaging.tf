@@ -1,7 +1,7 @@
 # Create new AWS SNS topic resource
 
 resource "aws_sns_topic" "user_updates" {
-  name = var.topic_name
+  name = "${var.topic_name}"
 
   tags = {
     Name = "Env=${var.env_type}"
