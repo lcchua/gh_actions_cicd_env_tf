@@ -13,7 +13,7 @@ terraform {
   # terraform state file is locally stored
   backend "s3" {
     bucket = "sctp-ce7-tfstate"
-    key    = "terraform-ex-gh-action-lcchua.tfstate"
+    key    = "tf-gh-action-lcchua-dev.tfstate"
     region = "us-east-1"
   }
 }
