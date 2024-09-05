@@ -1,15 +1,15 @@
-# Getting ready to test the workflow run on Push and Pull Request events
+# Getting ready to test the workflow run on workflow dispatch with input selection event
 
 name: Terraform CD
 on:
   workflow_dispatch:
     inputs:
       env_select:
-        description: 'Select the environment to configure: ''
+        description: "Select the environment to configure: "
         required: true
-        default: 'dev_env'
+        default: "dev_env"
         type: choice
-        options: 
+        options:
           - dev_env
           - uat_env
 
