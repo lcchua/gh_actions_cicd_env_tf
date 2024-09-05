@@ -3,9 +3,6 @@
 resource "aws_sns_topic" "user_updates" {
   name = var.topic_name
 
-  tags = {
-    Name = "Env=${var.env_type}"
-  }
 }
 
 output "sns_topic_arn" {
