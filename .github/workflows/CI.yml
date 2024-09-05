@@ -43,12 +43,12 @@ jobs:
       - name: Run TFLint
         run: tflint -f compact
 
+      - name: Terraform Init
+        run: terraform init
+
       - name: Clean up the spacing format of the tf code
         run: terraform fmt -check
         continue-on-error: true
-
-      - name: Terraform Init
-        run: terraform init
 
       - name: Terraform Validate
         run: terraform validate -no-color
