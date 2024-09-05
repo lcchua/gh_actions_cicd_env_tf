@@ -5,6 +5,5 @@ variable "region" {
 }
 
 variable "topic_name" {
-  description = "The aws sns topic name"
   type = string
 }
