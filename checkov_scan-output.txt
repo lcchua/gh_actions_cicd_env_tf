@@ -1,0 +1,294 @@
+
+
+       _               _              
+   ___| |__   ___  ___| | _______   __
+  / __| '_ \ / _ \/ __| |/ / _ \ \ / /
+ | (__| | | |  __/ (__|   < (_) \ V / 
+  \___|_| |_|\___|\___|_|\_\___/ \_/  
+                                      
+By Prisma Cloud | version: 3.2.240 
+Update available 3.2.240 -> 3.2.245
+Run pip3 install -U checkov to update 
+
+
+terraform scan results:
+
+Passed checks: 1, Failed checks: 1, Skipped checks: 0
+
+Check: CKV_AWS_41: "Ensure no hard coded AWS access key and secret key exists in provider"
+	PASSED for resource: aws.default
+	File: /provider.tf:3-5
+	Guide: https://docs.prismacloud.io/en/enterprise-edition/policy-reference/aws-policies/secrets-policies/bc-aws-secrets-5
+Check: CKV_AWS_26: "Ensure all data stored in the SNS topic is encrypted"
+	FAILED for resource: aws_sns_topic.user_updates
+	File: /messaging.tf:3-5
+	Guide: https://docs.prismacloud.io/en/enterprise-edition/policy-reference/aws-policies/aws-general-policies/general-15
+
+		3 | resource "aws_sns_topic" "user_updates" {
+		4 |   name = var.topic_name
+		5 | }
+
+github_actions scan results:
+
+Passed checks: 81, Failed checks: 1, Skipped checks: 0
+
+Check: CKV_GHA_6: "Found artifact build without evidence of cosign sbom attestation in pipeline"
+	PASSED for resource: jobs
+	File: /.github/workflows/CD.yml:17-48
+Check: CKV_GHA_3: "Suspicious use of curl with secrets"
+	PASSED for resource: jobs(terraform)
+	File: /.github/workflows/CD.yml:18-48
+Check: CKV_GHA_1: "Ensure ACTIONS_ALLOW_UNSECURE_COMMANDS isn't true on environment variables"
+	PASSED for resource: jobs(terraform)
+	File: /.github/workflows/CD.yml:18-48
+Check: CKV_GHA_5: "Found artifact build without evidence of cosign sign execution in pipeline"
+	PASSED for resource: jobs
+	File: /.github/workflows/CD.yml:17-48
+Check: CKV_GHA_2: "Ensure run commands are not vulnerable to shell injection"
+	PASSED for resource: jobs(terraform)
+	File: /.github/workflows/CD.yml:18-48
+Check: CKV_GHA_4: "Suspicious use of netcat with IP address"
+	PASSED for resource: jobs(terraform)
+	File: /.github/workflows/CD.yml:18-48
+Check: CKV_GHA_3: "Suspicious use of curl with secrets"
+	PASSED for resource: jobs(terraform).steps[1](Check environment)
+	File: /.github/workflows/CD.yml:22-26
+Check: CKV_GHA_3: "Suspicious use of curl with secrets"
+	PASSED for resource: jobs(terraform).steps[2](Checkout Codes)
+	File: /.github/workflows/CD.yml:25-29
+Check: CKV_GHA_3: "Suspicious use of curl with secrets"
+	PASSED for resource: jobs(terraform).steps[3](Configure AWS credentials)
+	File: /.github/workflows/CD.yml:28-36
+Check: CKV_GHA_3: "Suspicious use of curl with secrets"
+	PASSED for resource: jobs(terraform).steps[4](Setup Terraform)
+	File: /.github/workflows/CD.yml:35-39
+Check: CKV_GHA_3: "Suspicious use of curl with secrets"
+	PASSED for resource: jobs(terraform).steps[5](Terraform Init)
+	File: /.github/workflows/CD.yml:38-42
+Check: CKV_GHA_3: "Suspicious use of curl with secrets"
+	PASSED for resource: jobs(terraform).steps[6](Terraform Plan)
+	File: /.github/workflows/CD.yml:41-46
+Check: CKV_GHA_3: "Suspicious use of curl with secrets"
+	PASSED for resource: jobs(terraform).steps[7](Terraform Apply)
+	File: /.github/workflows/CD.yml:45-48
+Check: CKV_GHA_1: "Ensure ACTIONS_ALLOW_UNSECURE_COMMANDS isn't true on environment variables"
+	PASSED for resource: jobs(terraform).steps[1](Check environment)
+	File: /.github/workflows/CD.yml:22-26
+Check: CKV_GHA_1: "Ensure ACTIONS_ALLOW_UNSECURE_COMMANDS isn't true on environment variables"
+	PASSED for resource: jobs(terraform).steps[2](Checkout Codes)
+	File: /.github/workflows/CD.yml:25-29
+Check: CKV_GHA_1: "Ensure ACTIONS_ALLOW_UNSECURE_COMMANDS isn't true on environment variables"
+	PASSED for resource: jobs(terraform).steps[3](Configure AWS credentials)
+	File: /.github/workflows/CD.yml:28-36
+Check: CKV_GHA_1: "Ensure ACTIONS_ALLOW_UNSECURE_COMMANDS isn't true on environment variables"
+	PASSED for resource: jobs(terraform).steps[4](Setup Terraform)
+	File: /.github/workflows/CD.yml:35-39
+Check: CKV_GHA_1: "Ensure ACTIONS_ALLOW_UNSECURE_COMMANDS isn't true on environment variables"
+	PASSED for resource: jobs(terraform).steps[5](Terraform Init)
+	File: /.github/workflows/CD.yml:38-42
+Check: CKV_GHA_1: "Ensure ACTIONS_ALLOW_UNSECURE_COMMANDS isn't true on environment variables"
+	PASSED for resource: jobs(terraform).steps[6](Terraform Plan)
+	File: /.github/workflows/CD.yml:41-46
+Check: CKV_GHA_1: "Ensure ACTIONS_ALLOW_UNSECURE_COMMANDS isn't true on environment variables"
+	PASSED for resource: jobs(terraform).steps[7](Terraform Apply)
+	File: /.github/workflows/CD.yml:45-48
+Check: CKV_GHA_2: "Ensure run commands are not vulnerable to shell injection"
+	PASSED for resource: jobs(terraform).steps[1](Check environment)
+	File: /.github/workflows/CD.yml:22-26
+Check: CKV_GHA_2: "Ensure run commands are not vulnerable to shell injection"
+	PASSED for resource: jobs(terraform).steps[2](Checkout Codes)
+	File: /.github/workflows/CD.yml:25-29
+Check: CKV_GHA_2: "Ensure run commands are not vulnerable to shell injection"
+	PASSED for resource: jobs(terraform).steps[3](Configure AWS credentials)
+	File: /.github/workflows/CD.yml:28-36
+Check: CKV_GHA_2: "Ensure run commands are not vulnerable to shell injection"
+	PASSED for resource: jobs(terraform).steps[4](Setup Terraform)
+	File: /.github/workflows/CD.yml:35-39
+Check: CKV_GHA_2: "Ensure run commands are not vulnerable to shell injection"
+	PASSED for resource: jobs(terraform).steps[5](Terraform Init)
+	File: /.github/workflows/CD.yml:38-42
+Check: CKV_GHA_2: "Ensure run commands are not vulnerable to shell injection"
+	PASSED for resource: jobs(terraform).steps[6](Terraform Plan)
+	File: /.github/workflows/CD.yml:41-46
+Check: CKV_GHA_2: "Ensure run commands are not vulnerable to shell injection"
+	PASSED for resource: jobs(terraform).steps[7](Terraform Apply)
+	File: /.github/workflows/CD.yml:45-48
+Check: CKV_GHA_4: "Suspicious use of netcat with IP address"
+	PASSED for resource: jobs(terraform).steps[1](Check environment)
+	File: /.github/workflows/CD.yml:22-26
+Check: CKV_GHA_4: "Suspicious use of netcat with IP address"
+	PASSED for resource: jobs(terraform).steps[2](Checkout Codes)
+	File: /.github/workflows/CD.yml:25-29
+Check: CKV_GHA_4: "Suspicious use of netcat with IP address"
+	PASSED for resource: jobs(terraform).steps[3](Configure AWS credentials)
+	File: /.github/workflows/CD.yml:28-36
+Check: CKV_GHA_4: "Suspicious use of netcat with IP address"
+	PASSED for resource: jobs(terraform).steps[4](Setup Terraform)
+	File: /.github/workflows/CD.yml:35-39
+Check: CKV_GHA_4: "Suspicious use of netcat with IP address"
+	PASSED for resource: jobs(terraform).steps[5](Terraform Init)
+	File: /.github/workflows/CD.yml:38-42
+Check: CKV_GHA_4: "Suspicious use of netcat with IP address"
+	PASSED for resource: jobs(terraform).steps[6](Terraform Plan)
+	File: /.github/workflows/CD.yml:41-46
+Check: CKV_GHA_4: "Suspicious use of netcat with IP address"
+	PASSED for resource: jobs(terraform).steps[7](Terraform Apply)
+	File: /.github/workflows/CD.yml:45-48
+Check: CKV_GHA_6: "Found artifact build without evidence of cosign sbom attestation in pipeline"
+	PASSED for resource: jobs
+	File: /.github/workflows/CI.yml:11-56
+Check: CKV_GHA_3: "Suspicious use of curl with secrets"
+	PASSED for resource: jobs(terraform)
+	File: /.github/workflows/CI.yml:12-56
+Check: CKV_GHA_1: "Ensure ACTIONS_ALLOW_UNSECURE_COMMANDS isn't true on environment variables"
+	PASSED for resource: jobs(terraform)
+	File: /.github/workflows/CI.yml:12-56
+Check: CKV_GHA_5: "Found artifact build without evidence of cosign sign execution in pipeline"
+	PASSED for resource: jobs
+	File: /.github/workflows/CI.yml:11-56
+Check: CKV_GHA_2: "Ensure run commands are not vulnerable to shell injection"
+	PASSED for resource: jobs(terraform)
+	File: /.github/workflows/CI.yml:12-56
+Check: CKV_GHA_4: "Suspicious use of netcat with IP address"
+	PASSED for resource: jobs(terraform)
+	File: /.github/workflows/CI.yml:12-56
+Check: CKV_GHA_7: "The build output cannot be affected by user parameters other than the build entry point and the top-level source location. GitHub Actions workflow_dispatch inputs MUST be empty. "
+	PASSED for resource: on(Terraform CI)
+	File: /.github/workflows/CI.yml:5-11
+Check: CKV_GHA_3: "Suspicious use of curl with secrets"
+	PASSED for resource: jobs(terraform).steps[1](Checkout)
+	File: /.github/workflows/CI.yml:16-20
+Check: CKV_GHA_3: "Suspicious use of curl with secrets"
+	PASSED for resource: jobs(terraform).steps[2](Configure AWS credentials)
+	File: /.github/workflows/CI.yml:19-27
+Check: CKV_GHA_3: "Suspicious use of curl with secrets"
+	PASSED for resource: jobs(terraform).steps[3](Setup Terraform)
+	File: /.github/workflows/CI.yml:26-33
+Check: CKV_GHA_3: "Suspicious use of curl with secrets"
+	PASSED for resource: jobs(terraform).steps[4](Check the tf code for programmatic and stylistic errors)
+	File: /.github/workflows/CI.yml:32-38
+Check: CKV_GHA_3: "Suspicious use of curl with secrets"
+	PASSED for resource: jobs(terraform).steps[5](Show the version installed)
+	File: /.github/workflows/CI.yml:37-41
+Check: CKV_GHA_3: "Suspicious use of curl with secrets"
+	PASSED for resource: jobs(terraform).steps[6](Init TFLinit)
+	File: /.github/workflows/CI.yml:40-44
+Check: CKV_GHA_3: "Suspicious use of curl with secrets"
+	PASSED for resource: jobs(terraform).steps[7](Run TFLint)
+	File: /.github/workflows/CI.yml:43-47
+Check: CKV_GHA_3: "Suspicious use of curl with secrets"
+	PASSED for resource: jobs(terraform).steps[8](Terraform Init)
+	File: /.github/workflows/CI.yml:46-50
+Check: CKV_GHA_3: "Suspicious use of curl with secrets"
+	PASSED for resource: jobs(terraform).steps[9](Clean up the spacing format of the tf code)
+	File: /.github/workflows/CI.yml:49-54
+Check: CKV_GHA_3: "Suspicious use of curl with secrets"
+	PASSED for resource: jobs(terraform).steps[10](Terraform Validate)
+	File: /.github/workflows/CI.yml:53-56
+Check: CKV_GHA_1: "Ensure ACTIONS_ALLOW_UNSECURE_COMMANDS isn't true on environment variables"
+	PASSED for resource: jobs(terraform).steps[1](Checkout)
+	File: /.github/workflows/CI.yml:16-20
+Check: CKV_GHA_1: "Ensure ACTIONS_ALLOW_UNSECURE_COMMANDS isn't true on environment variables"
+	PASSED for resource: jobs(terraform).steps[2](Configure AWS credentials)
+	File: /.github/workflows/CI.yml:19-27
+Check: CKV_GHA_1: "Ensure ACTIONS_ALLOW_UNSECURE_COMMANDS isn't true on environment variables"
+	PASSED for resource: jobs(terraform).steps[3](Setup Terraform)
+	File: /.github/workflows/CI.yml:26-33
+Check: CKV_GHA_1: "Ensure ACTIONS_ALLOW_UNSECURE_COMMANDS isn't true on environment variables"
+	PASSED for resource: jobs(terraform).steps[4](Check the tf code for programmatic and stylistic errors)
+	File: /.github/workflows/CI.yml:32-38
+Check: CKV_GHA_1: "Ensure ACTIONS_ALLOW_UNSECURE_COMMANDS isn't true on environment variables"
+	PASSED for resource: jobs(terraform).steps[5](Show the version installed)
+	File: /.github/workflows/CI.yml:37-41
+Check: CKV_GHA_1: "Ensure ACTIONS_ALLOW_UNSECURE_COMMANDS isn't true on environment variables"
+	PASSED for resource: jobs(terraform).steps[6](Init TFLinit)
+	File: /.github/workflows/CI.yml:40-44
+Check: CKV_GHA_1: "Ensure ACTIONS_ALLOW_UNSECURE_COMMANDS isn't true on environment variables"
+	PASSED for resource: jobs(terraform).steps[7](Run TFLint)
+	File: /.github/workflows/CI.yml:43-47
+Check: CKV_GHA_1: "Ensure ACTIONS_ALLOW_UNSECURE_COMMANDS isn't true on environment variables"
+	PASSED for resource: jobs(terraform).steps[8](Terraform Init)
+	File: /.github/workflows/CI.yml:46-50
+Check: CKV_GHA_1: "Ensure ACTIONS_ALLOW_UNSECURE_COMMANDS isn't true on environment variables"
+	PASSED for resource: jobs(terraform).steps[9](Clean up the spacing format of the tf code)
+	File: /.github/workflows/CI.yml:49-54
+Check: CKV_GHA_1: "Ensure ACTIONS_ALLOW_UNSECURE_COMMANDS isn't true on environment variables"
+	PASSED for resource: jobs(terraform).steps[10](Terraform Validate)
+	File: /.github/workflows/CI.yml:53-56
+Check: CKV_GHA_2: "Ensure run commands are not vulnerable to shell injection"
+	PASSED for resource: jobs(terraform).steps[1](Checkout)
+	File: /.github/workflows/CI.yml:16-20
+Check: CKV_GHA_2: "Ensure run commands are not vulnerable to shell injection"
+	PASSED for resource: jobs(terraform).steps[2](Configure AWS credentials)
+	File: /.github/workflows/CI.yml:19-27
+Check: CKV_GHA_2: "Ensure run commands are not vulnerable to shell injection"
+	PASSED for resource: jobs(terraform).steps[3](Setup Terraform)
+	File: /.github/workflows/CI.yml:26-33
+Check: CKV_GHA_2: "Ensure run commands are not vulnerable to shell injection"
+	PASSED for resource: jobs(terraform).steps[4](Check the tf code for programmatic and stylistic errors)
+	File: /.github/workflows/CI.yml:32-38
+Check: CKV_GHA_2: "Ensure run commands are not vulnerable to shell injection"
+	PASSED for resource: jobs(terraform).steps[5](Show the version installed)
+	File: /.github/workflows/CI.yml:37-41
+Check: CKV_GHA_2: "Ensure run commands are not vulnerable to shell injection"
+	PASSED for resource: jobs(terraform).steps[6](Init TFLinit)
+	File: /.github/workflows/CI.yml:40-44
+Check: CKV_GHA_2: "Ensure run commands are not vulnerable to shell injection"
+	PASSED for resource: jobs(terraform).steps[7](Run TFLint)
+	File: /.github/workflows/CI.yml:43-47
+Check: CKV_GHA_2: "Ensure run commands are not vulnerable to shell injection"
+	PASSED for resource: jobs(terraform).steps[8](Terraform Init)
+	File: /.github/workflows/CI.yml:46-50
+Check: CKV_GHA_2: "Ensure run commands are not vulnerable to shell injection"
+	PASSED for resource: jobs(terraform).steps[9](Clean up the spacing format of the tf code)
+	File: /.github/workflows/CI.yml:49-54
+Check: CKV_GHA_2: "Ensure run commands are not vulnerable to shell injection"
+	PASSED for resource: jobs(terraform).steps[10](Terraform Validate)
+	File: /.github/workflows/CI.yml:53-56
+Check: CKV_GHA_4: "Suspicious use of netcat with IP address"
+	PASSED for resource: jobs(terraform).steps[1](Checkout)
+	File: /.github/workflows/CI.yml:16-20
+Check: CKV_GHA_4: "Suspicious use of netcat with IP address"
+	PASSED for resource: jobs(terraform).steps[2](Configure AWS credentials)
+	File: /.github/workflows/CI.yml:19-27
+Check: CKV_GHA_4: "Suspicious use of netcat with IP address"
+	PASSED for resource: jobs(terraform).steps[3](Setup Terraform)
+	File: /.github/workflows/CI.yml:26-33
+Check: CKV_GHA_4: "Suspicious use of netcat with IP address"
+	PASSED for resource: jobs(terraform).steps[4](Check the tf code for programmatic and stylistic errors)
+	File: /.github/workflows/CI.yml:32-38
+Check: CKV_GHA_4: "Suspicious use of netcat with IP address"
+	PASSED for resource: jobs(terraform).steps[5](Show the version installed)
+	File: /.github/workflows/CI.yml:37-41
+Check: CKV_GHA_4: "Suspicious use of netcat with IP address"
+	PASSED for resource: jobs(terraform).steps[6](Init TFLinit)
+	File: /.github/workflows/CI.yml:40-44
+Check: CKV_GHA_4: "Suspicious use of netcat with IP address"
+	PASSED for resource: jobs(terraform).steps[7](Run TFLint)
+	File: /.github/workflows/CI.yml:43-47
+Check: CKV_GHA_4: "Suspicious use of netcat with IP address"
+	PASSED for resource: jobs(terraform).steps[8](Terraform Init)
+	File: /.github/workflows/CI.yml:46-50
+Check: CKV_GHA_4: "Suspicious use of netcat with IP address"
+	PASSED for resource: jobs(terraform).steps[9](Clean up the spacing format of the tf code)
+	File: /.github/workflows/CI.yml:49-54
+Check: CKV_GHA_4: "Suspicious use of netcat with IP address"
+	PASSED for resource: jobs(terraform).steps[10](Terraform Validate)
+	File: /.github/workflows/CI.yml:53-56
+Check: CKV_GHA_7: "The build output cannot be affected by user parameters other than the build entry point and the top-level source location. GitHub Actions workflow_dispatch inputs MUST be empty. "
+	FAILED for resource: on(Terraform CD)
+	File: /.github/workflows/CD.yml:7-17
+
+		7  |       env_select:
+		8  |         description: "Select the environment to configure: "
+		9  |         required: true
+		10 |         default: "dev_env"
+		11 |         type: choice
+		12 |         options:
+		13 |           - dev_env
+		14 |           - uat_env
+		15 | 
+		16 | jobs:
+		17 |   terraform:
+
+

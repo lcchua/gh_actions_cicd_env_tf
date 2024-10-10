@@ -1,0 +1,258 @@
+{
+  "format_version": "1.2",
+  "terraform_version": "1.9.3",
+  "variables": {
+    "region": {
+      "value": "us-east-1"
+    },
+    "topic_name": {
+      "value": "lcchua-dev-sns-topic"
+    }
+  },
+  "planned_values": {
+    "outputs": {
+      "sns_topic_arn": {
+        "sensitive": false
+      }
+    },
+    "root_module": {
+      "resources": [
+        {
+          "address": "aws_sns_topic.user_updates",
+          "mode": "managed",
+          "type": "aws_sns_topic",
+          "name": "user_updates",
+          "provider_name": "registry.terraform.io/hashicorp/aws",
+          "schema_version": 0,
+          "values": {
+            "application_failure_feedback_role_arn": null,
+            "application_success_feedback_role_arn": null,
+            "application_success_feedback_sample_rate": null,
+            "archive_policy": null,
+            "content_based_deduplication": false,
+            "delivery_policy": null,
+            "display_name": null,
+            "fifo_topic": false,
+            "firehose_failure_feedback_role_arn": null,
+            "firehose_success_feedback_role_arn": null,
+            "firehose_success_feedback_sample_rate": null,
+            "http_failure_feedback_role_arn": null,
+            "http_success_feedback_role_arn": null,
+            "http_success_feedback_sample_rate": null,
+            "kms_master_key_id": null,
+            "lambda_failure_feedback_role_arn": null,
+            "lambda_success_feedback_role_arn": null,
+            "lambda_success_feedback_sample_rate": null,
+            "name": "lcchua-dev-sns-topic",
+            "sqs_failure_feedback_role_arn": null,
+            "sqs_success_feedback_role_arn": null,
+            "sqs_success_feedback_sample_rate": null,
+            "tags": null
+          },
+          "sensitive_values": {
+            "tags_all": {}
+          }
+        }
+      ]
+    }
+  },
+  "resource_drift": [
+    {
+      "address": "aws_sns_topic.user_updates",
+      "mode": "managed",
+      "type": "aws_sns_topic",
+      "name": "user_updates",
+      "provider_name": "registry.terraform.io/hashicorp/aws",
+      "change": {
+        "actions": [
+          "delete"
+        ],
+        "before": {
+          "application_failure_feedback_role_arn": "",
+          "application_success_feedback_role_arn": "",
+          "application_success_feedback_sample_rate": 0,
+          "archive_policy": "",
+          "arn": "arn:aws:sns:us-east-1:255945442255:terraform-20240905024359910800000002",
+          "beginning_archive_time": "",
+          "content_based_deduplication": false,
+          "delivery_policy": "",
+          "display_name": "",
+          "fifo_topic": false,
+          "firehose_failure_feedback_role_arn": "",
+          "firehose_success_feedback_role_arn": "",
+          "firehose_success_feedback_sample_rate": 0,
+          "http_failure_feedback_role_arn": "",
+          "http_success_feedback_role_arn": "",
+          "http_success_feedback_sample_rate": 0,
+          "id": "arn:aws:sns:us-east-1:255945442255:terraform-20240905024359910800000002",
+          "kms_master_key_id": "",
+          "lambda_failure_feedback_role_arn": "",
+          "lambda_success_feedback_role_arn": "",
+          "lambda_success_feedback_sample_rate": 0,
+          "name": "terraform-20240905024359910800000002",
+          "name_prefix": "terraform-",
+          "owner": "255945442255",
+          "policy": "{\"Id\":\"__default_policy_ID\",\"Statement\":[{\"Action\":[\"SNS:GetTopicAttributes\",\"SNS:SetTopicAttributes\",\"SNS:AddPermission\",\"SNS:RemovePermission\",\"SNS:DeleteTopic\",\"SNS:Subscribe\",\"SNS:ListSubscriptionsByTopic\",\"SNS:Publish\"],\"Condition\":{\"StringEquals\":{\"AWS:SourceOwner\":\"255945442255\"}},\"Effect\":\"Allow\",\"Principal\":{\"AWS\":\"*\"},\"Resource\":\"arn:aws:sns:us-east-1:255945442255:terraform-20240905024359910800000002\",\"Sid\":\"__default_statement_ID\"}],\"Version\":\"2008-10-17\"}",
+          "signature_version": 0,
+          "sqs_failure_feedback_role_arn": "",
+          "sqs_success_feedback_role_arn": "",
+          "sqs_success_feedback_sample_rate": 0,
+          "tags": null,
+          "tags_all": {},
+          "tracing_config": ""
+        },
+        "after": null,
+        "after_unknown": {},
+        "before_sensitive": {
+          "tags_all": {}
+        },
+        "after_sensitive": false
+      }
+    }
+  ],
+  "resource_changes": [
+    {
+      "address": "aws_sns_topic.user_updates",
+      "mode": "managed",
+      "type": "aws_sns_topic",
+      "name": "user_updates",
+      "provider_name": "registry.terraform.io/hashicorp/aws",
+      "change": {
+        "actions": [
+          "create"
+        ],
+        "before": null,
+        "after": {
+          "application_failure_feedback_role_arn": null,
+          "application_success_feedback_role_arn": null,
+          "application_success_feedback_sample_rate": null,
+          "archive_policy": null,
+          "content_based_deduplication": false,
+          "delivery_policy": null,
+          "display_name": null,
+          "fifo_topic": false,
+          "firehose_failure_feedback_role_arn": null,
+          "firehose_success_feedback_role_arn": null,
+          "firehose_success_feedback_sample_rate": null,
+          "http_failure_feedback_role_arn": null,
+          "http_success_feedback_role_arn": null,
+          "http_success_feedback_sample_rate": null,
+          "kms_master_key_id": null,
+          "lambda_failure_feedback_role_arn": null,
+          "lambda_success_feedback_role_arn": null,
+          "lambda_success_feedback_sample_rate": null,
+          "name": "lcchua-dev-sns-topic",
+          "sqs_failure_feedback_role_arn": null,
+          "sqs_success_feedback_role_arn": null,
+          "sqs_success_feedback_sample_rate": null,
+          "tags": null
+        },
+        "after_unknown": {
+          "arn": true,
+          "beginning_archive_time": true,
+          "id": true,
+          "name_prefix": true,
+          "owner": true,
+          "policy": true,
+          "signature_version": true,
+          "tags_all": true,
+          "tracing_config": true
+        },
+        "before_sensitive": false,
+        "after_sensitive": {
+          "tags_all": {}
+        }
+      }
+    }
+  ],
+  "output_changes": {
+    "sns_topic_arn": {
+      "actions": [
+        "update"
+      ],
+      "before": "arn:aws:sns:us-east-1:255945442255:terraform-20240905024359910800000002",
+      "after_unknown": true,
+      "before_sensitive": false,
+      "after_sensitive": false
+    }
+  },
+  "prior_state": {
+    "format_version": "1.0",
+    "terraform_version": "1.9.3",
+    "values": {
+      "outputs": {
+        "sns_topic_arn": {
+          "sensitive": false,
+          "value": "arn:aws:sns:us-east-1:255945442255:terraform-20240905024359910800000002",
+          "type": "string"
+        }
+      },
+      "root_module": {}
+    }
+  },
+  "configuration": {
+    "provider_config": {
+      "aws": {
+        "name": "aws",
+        "full_name": "registry.terraform.io/hashicorp/aws",
+        "version_constraint": "~> 5.0",
+        "expressions": {
+          "region": {
+            "references": [
+              "var.region"
+            ]
+          }
+        }
+      }
+    },
+    "root_module": {
+      "outputs": {
+        "sns_topic_arn": {
+          "expression": {
+            "references": [
+              "aws_sns_topic.user_updates.arn",
+              "aws_sns_topic.user_updates"
+            ]
+          },
+          "description": "The ARN of the SNS topic"
+        }
+      },
+      "resources": [
+        {
+          "address": "aws_sns_topic.user_updates",
+          "mode": "managed",
+          "type": "aws_sns_topic",
+          "name": "user_updates",
+          "provider_config_key": "aws",
+          "expressions": {
+            "name": {
+              "references": [
+                "var.topic_name"
+              ]
+            }
+          },
+          "schema_version": 0
+        }
+      ],
+      "variables": {
+        "region": {
+          "default": "us-east-1",
+          "description": "Name of aws region"
+        },
+        "topic_name": {}
+      }
+    }
+  },
+  "relevant_attributes": [
+    {
+      "resource": "aws_sns_topic.user_updates",
+      "attribute": [
+        "arn"
+      ]
+    }
+  ],
+  "timestamp": "2024-09-05T02:56:49Z",
+  "applyable": true,
+  "complete": true,
+  "errored": false
+}
